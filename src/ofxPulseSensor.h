@@ -11,26 +11,36 @@
 
 #include "ofMain.h"
 
-class ofxPulseSensor {
+struct PulseData{
+    int     sensor;
+    int     IBI;
+    int     BPM;
+    
+    float   val;
+    float   sec;
+    
+    bool    bGoodData;
+};
+
+class ofxPulseSensor : public ofSerial {
 public:
     
-    ofxPulseSensor();
-    
-    void        setup(int _dev, int _baud);
     void        update();
     
+    PulseData   getData( float _sec);
+    float       getVal( float _sec);
+    int         getBPM( float _sec);
+    int         getIBI( float _sec);
+    int         getSensor( float _sec);
+    
+    void        draw();
+    
     int         Sensor;     // HOLDS PULSE SENSOR DATA FROM ARDUINO
-    int         IBI;        // HOLDS TIME BETWEN HEARTBEATS FROM ARDUINO
-    int         BPM;        // HOLDS HEART RATE VALUE FROM ARDUINO
-    
-    vector<float>   raw;        // HOLDS HEARTBEAT WAVEFORM DATA BEFORE SCALING
-    vector<int>     rate;       // USED TO POSITION BPM DATA WAVEFORM
-    
+    int         IBI;        // http://en.wikipedia.org/wiki/Heart_rate
+    int         BPM;        // http://en.wikipedia.org/wiki/Interbeat_interval
+
 private:
-//    bool        readUntil(string& rResult, char cUntil);
-    
-    ofSerial    serial;
-    
-    
+//    ofSerial            serial;
+    vector<PulseData>   data;
 };
 #endif

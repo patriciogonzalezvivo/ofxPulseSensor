@@ -3,7 +3,10 @@
 //--------------------------------------------------------------
 void testApp::setup(){
     ofSetVerticalSync(true);
+    ofEnableAlphaBlending();
+    ofEnableSmoothing();
     
+    pSensor.listDevices();
     pSensor.setup(0, 115200);
 }
 
@@ -12,7 +15,6 @@ void testApp::setup(){
 //--------------------------------------------------------------
 void testApp::update(){
     pSensor.update();
-    
 }
 
 //--------------------------------------------------------------
@@ -20,22 +22,7 @@ void testApp::draw(){
     
     ofBackground(0);
     
-    ofDrawBitmapString("Sensor: " + ofToString(pSensor.Sensor), 15,15);
-    ofDrawBitmapString("BPM: " + ofToString(pSensor.BPM), 15,30);
-    ofDrawBitmapString("IBI: " + ofToString(pSensor.IBI), 15,45);
-    
-    ofNoFill();
-    
-    ofPushMatrix();
-    ofTranslate(0, ofGetHeight()*0.5);
-    
-    ofBeginShape();
-    for(int i = 0; i < pSensor.raw.size();i++ ){
-        ofVertex(i, pSensor.raw[i]*ofGetHeight()*0.5);
-    }
-    ofEndShape();
-    
-    ofPopMatrix();
+    pSensor.draw();
 }
 
 //--------------------------------------------------------------
