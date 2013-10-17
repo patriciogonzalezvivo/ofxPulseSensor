@@ -79,9 +79,9 @@ void ofxPulseSensor::update(){
                 
                 if(secondBeat){                     // if this is the second beat, if secondBeat == TRUE
                     secondBeat = false;             // clear secondBeat flag
-                    for(int i=0; i<=9; i++){        // seed the running total to get a realisitic BPM at startup
-                        rate[i] = IBI;
-                    }
+//                    for(int i=0; i<=9; i++){        // seed the running total to get a realisitic BPM at startup
+//                        rate[i] = IBI;
+//                    }
                 }
                 
                 if(firstBeat){                      // if it's the first time we found a beat, if firstBeat == TRUE
@@ -171,7 +171,7 @@ void ofxPulseSensor::pushNewData(){
     data.push_back(newPack);
 }
 
-PulseData ofxPulseSensor::getData(float _sec){
+PulseData ofxPulseSensor::getData(const float &_sec){
     
     PulseData pData;
     
@@ -197,7 +197,7 @@ PulseData ofxPulseSensor::getData(float _sec){
     return pData;
 }
 
-float ofxPulseSensor::getVal(float _sec){
+float ofxPulseSensor::getVal(const float &_sec){
     
 	for (int i = 0; i < data.size()-1; i++){
 		if (_sec >= data[i].sec && _sec <= data[i+1].sec){
@@ -213,7 +213,7 @@ float ofxPulseSensor::getVal(float _sec){
     
 }
 
-int ofxPulseSensor::getBPM(float _sec){
+int ofxPulseSensor::getBPM(const float &_sec){
     for (int i = 0; i < data.size()-1; i++){
 		if (_sec >= data[i].sec && _sec <= data[i+1].sec){
 			
@@ -227,7 +227,7 @@ int ofxPulseSensor::getBPM(float _sec){
 	}
 }
 
-int ofxPulseSensor::getIBI(float _sec){
+int ofxPulseSensor::getIBI(const float &_sec){
     for (int i = 0; i < data.size()-1; i++){
 		if (_sec >= data[i].sec && _sec <= data[i+1].sec){
 			
@@ -241,7 +241,7 @@ int ofxPulseSensor::getIBI(float _sec){
 	}
 }
 
-int ofxPulseSensor::getSensor(float _sec){
+int ofxPulseSensor::getSensor(const float &_sec){
     for (int i = 0; i < data.size()-1; i++){
 		if (_sec >= data[i].sec && _sec <= data[i+1].sec){
 			

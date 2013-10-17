@@ -28,11 +28,11 @@ public:
     
     void        setup();
     
-    PulseData   getData(float _sec);
-    float       getVal(float _sec);
-    int         getBPM(float _sec);
-    int         getIBI(float _sec);
-    int         getSensor(float _sec);
+    PulseData   getData(const float &_sec);
+    float       getVal(const float &_sec);
+    int         getBPM(const float &_sec);
+    int         getIBI(const float &_sec);
+    int         getSensor(const float &_sec);
     
     void        update();
     void        draw();
