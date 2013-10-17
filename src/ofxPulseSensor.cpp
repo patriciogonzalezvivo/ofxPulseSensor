@@ -1,6 +1,5 @@
 //
 //  ofxPulseSensor.cpp
-//  05_Pulse_Wave
 //
 //  Created by Patricio Gonzalez Vivo on 3/11/13.
 //
