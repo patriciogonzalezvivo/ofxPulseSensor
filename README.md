@@ -9,7 +9,7 @@ OpenFramework addon to read that from [PulseSensor](http://pulsesensor.myshopify
 Using Arduino as Server and your laptop (tested on OSX) as a client:
 
 1. Flash your Arduino with this [firmware](http://pulse-sensor.googlecode.com/files/PulseSensorAmped_Arduino_1dot1.zip)
-2. Connect the Arduino by USB to this computer
+2. Connect the Arduino by USB to this computer and the PulseSensor to the arduino following this [guide](http://pulse-sensor.googlecode.com/files/PulseSensorAmpedGettingStartedGuide.pdf) or this [video](https://vimeo.com/58657081)
 3. Add this addon to your program (see arduino-example) and compile
 
 ### Connecting your PulseSensor directly OpenFrameworks App using Raspberry Pi:
@@ -30,10 +30,3 @@ More References about Analog Input in RaspberryPi:
 
 * http://learn.adafruit.com/reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi/connecting-the-cobbler-to-a-mcp3008
 * http://raspberrypihobbyist.blogspot.com/2012/12/analog-interface.html
-
-## Original PulseSensor Documentation
-
-* [Guide](http://pulse-sensor.googlecode.com/files/PulseSensorAmpedGettingStartedGuide.pdf)
-* [Web](http://pulsesensor.myshopify.com/)
-* [Hardware Information](http://pulsesensor.myshopify.com/pages/open-hardware)
-* [Video](https://vimeo.com/58657081)
