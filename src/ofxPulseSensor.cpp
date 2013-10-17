@@ -94,7 +94,7 @@ void ofxPulseSensor::update(){
                 //
                 int runningTotal = 0;               // clear the runningTotal variable
                 for(int i= data.size()-1; i>=data.size()-11; i--){
-                    runningTotal += data[i];        // add up the 9 oldest IBI values
+                    runningTotal += data[i].IBI;        // add up the 9 oldest IBI values
                 }
                 
                 runningTotal += IBI;                // add the latest IBI to runningTotal
