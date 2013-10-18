@@ -14,9 +14,7 @@ void ofxPulseSensor::setup(){
     //  Listen RaspberryPi GPIO's SPI on channel O
     //
     analogIn.setup(0);
-    
-    sampleCounter = 0;
-    lastBeatTime = 0;
+
     thresh = 512;
     T = 512;
     P = 512;
@@ -73,7 +71,7 @@ void ofxPulseSensor::update(){
         //
         if (N > 250){                               // avoid high frequency noise
             
-            if ( (Signal > thresh) && (Pulse == false) && (N > (IBI/5)*3) ){
+            if ( (Signal > thresh) && !Pulse && (N > (IBI/5)*3) ){
                 Pulse = true;                       // set the Pulse flag when we think there is a pulse
                 IBI = N;                            // measure time between beats in mS
                 
@@ -93,7 +91,7 @@ void ofxPulseSensor::update(){
                 // keep a running total of the last 10 IBI values
                 //
                 int runningTotal = 0;               // clear the runningTotal variable
-                for(int i= data.size()-1; i>=data.size()-11; i--){
+                for(int i = data.size()-1; i>=data.size()-10; i--){
                     runningTotal += data[i].IBI;        // add up the 9 oldest IBI values
                 }
                 
@@ -103,7 +101,7 @@ void ofxPulseSensor::update(){
             }
         }
         
-        if (Signal < thresh && Pulse == true){      // when the values are going down, the beat is over
+        if (Signal < thresh && Pulse){      // when the values are going down, the beat is over
             Pulse = false;                          // reset the Pulse flag so we can do it again
             amp = P - T;                            // get amplitude of the pulse wave
             thresh = amp/2 + T;                     // set thresh at 50% of the amplitude
