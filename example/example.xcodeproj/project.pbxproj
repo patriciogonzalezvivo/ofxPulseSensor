@@ -64,16 +64,7 @@
 /* Begin PBXFileReference section */
 		19455bee3d1397df89d1b168d72cfbfa /* ofxPulseSensor.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxPulseSensor.cpp; path = ../../../addons/ofxPulseSensor/src/ofxPulseSensor.cpp; sourceTree = SOURCE_ROOT; };
 		3e0f50b5ed08fb9f52ecac5e5d27a9ac /* ofxPulseSensor.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPulseSensor.h; path = ../../../addons/ofxPulseSensor/src/ofxPulseSensor.h; sourceTree = SOURCE_ROOT; };
-		3e283a05bb06f6d954f93d64ffacb6fc /* wiringShift.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = wiringShift.h; path = ../../../addons/ofxPulseSensor/libs/wiringPi/include/wiringShift.h; sourceTree = SOURCE_ROOT; };
-		41c5fff011addfa123a3ced127921521 /* wiringSerial.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = wiringSerial.h; path = ../../../addons/ofxPulseSensor/libs/wiringPi/include/wiringSerial.h; sourceTree = SOURCE_ROOT; };
-		55dd2960b5b62556f3053d204824bd2e /* wiringPiSPI.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = wiringPiSPI.h; path = ../../../addons/ofxPulseSensor/libs/wiringPi/include/wiringPiSPI.h; sourceTree = SOURCE_ROOT; };
-		5891a4b57829a1f94d755d8be3472b13 /* piNes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = piNes.h; path = ../../../addons/ofxPulseSensor/libs/wiringPi/include/piNes.h; sourceTree = SOURCE_ROOT; };
-		5cfc2ccebf3ec6ab94c64f25360e912c /* softTone.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = softTone.h; path = ../../../addons/ofxPulseSensor/libs/wiringPi/include/softTone.h; sourceTree = SOURCE_ROOT; };
 		5e5740ab7e4588ea0559f8b6fcf7d573 /* AnalogIn.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = AnalogIn.h; path = ../../../addons/ofxPulseSensor/src/AnalogIn.h; sourceTree = SOURCE_ROOT; };
-		6076886e5f488babb1b9309eee93003f /* softPwm.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = softPwm.h; path = ../../../addons/ofxPulseSensor/libs/wiringPi/include/softPwm.h; sourceTree = SOURCE_ROOT; };
-		9720dc967cc8d9fd059ea74935e7be28 /* wiringPi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = wiringPi.h; path = ../../../addons/ofxPulseSensor/libs/wiringPi/include/wiringPi.h; sourceTree = SOURCE_ROOT; };
-		9e1fa43acb7e251449d38e8018779a1b /* lcd.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lcd.h; path = ../../../addons/ofxPulseSensor/libs/wiringPi/include/lcd.h; sourceTree = SOURCE_ROOT; };
-		9eaac21d3af338b5bc2f2c66fda36443 /* wiringPiI2C.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = wiringPiI2C.h; path = ../../../addons/ofxPulseSensor/libs/wiringPi/include/wiringPiI2C.h; sourceTree = SOURCE_ROOT; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -98,8 +89,6 @@
 		E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		E7E077E715D3B6510020DFD4 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		E7F985F515E0DE99003869B5 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = /System/Library/Frameworks/Accelerate.framework; sourceTree = "<absolute>"; };
-		b4eb55b7c177b9906c8bff99abd8d735 /* gertboard.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gertboard.h; path = ../../../addons/ofxPulseSensor/libs/wiringPi/include/gertboard.h; sourceTree = SOURCE_ROOT; };
-		c95ef14033813c8a43f0d0133d9b6e2f /* softServo.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = softServo.h; path = ../../../addons/ofxPulseSensor/libs/wiringPi/include/softServo.h; sourceTree = SOURCE_ROOT; };
 		cbe078785eb28e46eda4655fb815dc12 /* AnalogIn.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = AnalogIn.cpp; path = ../../../addons/ofxPulseSensor/src/AnalogIn.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -140,32 +129,6 @@
 				3e0f50b5ed08fb9f52ecac5e5d27a9ac /* ofxPulseSensor.h */,
 			);
 			name = src;
-			sourceTree = "<group>";
-		};
-		45c15291b3107ccaef8881328e56da58 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				b4eb55b7c177b9906c8bff99abd8d735 /* gertboard.h */,
-				9e1fa43acb7e251449d38e8018779a1b /* lcd.h */,
-				5891a4b57829a1f94d755d8be3472b13 /* piNes.h */,
-				6076886e5f488babb1b9309eee93003f /* softPwm.h */,
-				c95ef14033813c8a43f0d0133d9b6e2f /* softServo.h */,
-				5cfc2ccebf3ec6ab94c64f25360e912c /* softTone.h */,
-				9720dc967cc8d9fd059ea74935e7be28 /* wiringPi.h */,
-				9eaac21d3af338b5bc2f2c66fda36443 /* wiringPiI2C.h */,
-				55dd2960b5b62556f3053d204824bd2e /* wiringPiSPI.h */,
-				41c5fff011addfa123a3ced127921521 /* wiringSerial.h */,
-				3e283a05bb06f6d954f93d64ffacb6fc /* wiringShift.h */,
-			);
-			name = include;
-			sourceTree = "<group>";
-		};
-		90643640b12fed97119453ab24de772d /* wiringPi */ = {
-			isa = PBXGroup;
-			children = (
-				45c15291b3107ccaef8881328e56da58 /* include */,
-			);
-			name = wiringPi;
 			sourceTree = "<group>";
 		};
 		BB4B014C10F69532006C3DED /* addons */ = {
@@ -259,17 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				45bd520ade094b84eba4da31daf88a70 /* src */,
-				eea68b5932bac1b0dfcd9664200bb354 /* libs */,
 			);
 			name = ofxPulseSensor;
-			sourceTree = "<group>";
-		};
-		eea68b5932bac1b0dfcd9664200bb354 /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				90643640b12fed97119453ab24de772d /* wiringPi */,
-			);
-			name = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

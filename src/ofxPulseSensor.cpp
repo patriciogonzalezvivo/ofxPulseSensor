@@ -52,7 +52,6 @@ void ofxPulseSensor::update(){
     //
     Signal = analogIn.value;
     
-    
     if(data.size() > 10){
         int N = (ofGetElapsedTimef()-data[data.size()-1].sec)*1000;
         
@@ -118,6 +117,8 @@ void ofxPulseSensor::update(){
         }
         
     }
+    
+    pushNewData();
 #else
     
     //  GET THE DATA FROM ARDUINO
@@ -340,10 +341,10 @@ void ofxPulseSensor::draw(){
     }
     
     float x = 0;
-    for(int i = data.size()-1; i >= 0 && i >= data.size()-ofGetWidth()*0.5 ; i-- ){
+    for(int i = data.size()-1; i >= 0; i-- ){
         
         if ( data[i].bGoodData ){
-            float alpha = ofMap(x, -ofGetWidth()*0.5, 0.0, 0.0, 1.0);
+            float alpha = ofMap(x, data.size(), 0.0, 0.0, 1.0);
             mesh.addColor( ofFloatColor(1.0, alpha) );
             mesh.addVertex(ofPoint(x, data[i].val*ofGetHeight()*0.5));
         }
