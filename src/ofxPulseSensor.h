@@ -46,6 +46,7 @@ private:
     
 #ifdef TARGET_RASPBERRY_PI
     AnalogIn    analogIn;
+    int         rate[10]; 
     int         thresh;
     int         T;
     int         P;

@@ -76,9 +76,9 @@ void ofxPulseSensor::update(){
                 
                 if(secondBeat){                     // if this is the second beat, if secondBeat == TRUE
                     secondBeat = false;             // clear secondBeat flag
-//                    for(int i=0; i<=9; i++){        // seed the running total to get a realisitic BPM at startup
-//                        rate[i] = IBI;
-//                    }
+                    for(int i=0; i<=9; i++){        // seed the running total to get a realisitic BPM at startup
+                        rate[i] = IBI;
+                    }
                 }
                 
                 if(firstBeat){                      // if it's the first time we found a beat, if firstBeat == TRUE
@@ -90,17 +90,19 @@ void ofxPulseSensor::update(){
                 // keep a running total of the last 10 IBI values
                 //
                 int runningTotal = 0;               // clear the runningTotal variable
-                for(int i = data.size()-1; i>=data.size()-10; i--){
-                    runningTotal += data[i].IBI;        // add up the 9 oldest IBI values
+                for(int i=0; i<=8; i++){            // shift data in the rate array
+                    rate[i] = rate[i+1];            // and drop the oldest IBI value
+                    runningTotal += rate[i];        // add up the 9 oldest IBI values
                 }
                 
-                runningTotal += IBI;                // add the latest IBI to runningTotal
+                rate[9] = IBI;                      // add the latest IBI to the rate array
+                runningTotal += rate[9];            // add the latest IBI to runningTotal
                 runningTotal /= 10;                 // average the last 10 IBI values
                 BPM = 60000/runningTotal;           // how many beats can fit into a minute? that's BPM!
             }
         }
         
-        if (Signal < thresh && Pulse){      // when the values are going down, the beat is over
+        if (Signal < thresh && Pulse){              // when the values are going down, the beat is over
             Pulse = false;                          // reset the Pulse flag so we can do it again
             amp = P - T;                            // get amplitude of the pulse wave
             thresh = amp/2 + T;                     // set thresh at 50% of the amplitude
