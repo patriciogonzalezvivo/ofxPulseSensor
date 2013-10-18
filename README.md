@@ -3,7 +3,7 @@
 
 ![pulse](http://cdn.shopify.com/s/files/1/0100/6632/products/PulseSensorAmpedFinger-web_2_large.jpg?14)
 
-OpenFramework addon to read that from [PulseSensor](http://pulsesensor.myshopify.com/) develop by Joel Murphy and Yury Gitman.
+OpenFramework addon to read that from [PulseSensor](http://pulsesensor.myshopify.com/) develop by [Joel Murphy](http://www.joelmurphy.net/) and [Yury Gitman](http://www.mybeatingheart.com/yury/).
 
 ### Connecting PulseSensor through Arduino
 Using Arduino as Server and your laptop (tested on OSX) as a client:
@@ -25,6 +25,12 @@ Using Arduino as Server and your laptop (tested on OSX) as a client:
 	1. ```sudo nano /etc/modprobe.d/raspi-blacklist.conf```
 	2.	comment with # (or remove) those lines
 	3.	reboot the pi
+	
+4. Add ofxPulseSensor to your addons.make file, compile and run as root. (Attention! Because the wiringPi the App need to be run in super user mode or sudo )
+
+	1. ```make```
+	2. ```sudo make run``` 
+
 
 More References about Analog Input in RaspberryPi:
 
