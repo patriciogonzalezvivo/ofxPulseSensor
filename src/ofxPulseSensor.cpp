@@ -141,7 +141,6 @@ void ofxPulseSensor::cleanData(){
                     
                     //  Try to found a value that have sense given the others
                     //
-                    //                    float pct = ofMap(i, nextGoodDataIndex, lastGoodDataIndex, 0.0, 1.0,true);
                     float pct = ofMap(i, nextGoodDataTime, lastGoodDataTime, 0.0, 1.0,true);
                     
                     data[i].sensor = nextGoodData*(1.0-pct)+lastGoodData*pct;
