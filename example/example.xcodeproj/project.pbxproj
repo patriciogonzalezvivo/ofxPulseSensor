@@ -125,8 +125,8 @@
 			children = (
 				5e5740ab7e4588ea0559f8b6fcf7d573 /* AnalogIn.h */,
 				cbe078785eb28e46eda4655fb815dc12 /* AnalogIn.cpp */,
-				19455bee3d1397df89d1b168d72cfbfa /* ofxPulseSensor.cpp */,
 				3e0f50b5ed08fb9f52ecac5e5d27a9ac /* ofxPulseSensor.h */,
+				19455bee3d1397df89d1b168d72cfbfa /* ofxPulseSensor.cpp */,
 			);
 			name = src;
 			sourceTree = "<group>";

@@ -46,7 +46,10 @@ private:
     
 #ifdef TARGET_RASPBERRY_PI
     AnalogIn    analogIn;
-    int         rate[10]; 
+    
+    int         rate[10];
+    unsigned long sampleCounter;
+    unsigned long lastBeatTime;
     int         thresh;
     int         T;
     int         P;

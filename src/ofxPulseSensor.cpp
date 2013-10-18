@@ -14,7 +14,9 @@ void ofxPulseSensor::setup(){
     //  Listen RaspberryPi GPIO's SPI on channel O
     //
     analogIn.setup(0);
-
+    
+    sampleCounter = 0;
+    lastBeatTime = 0;
     thresh = 512;
     T = 512;
     P = 512;
@@ -52,9 +54,15 @@ void ofxPulseSensor::update(){
     //
     Signal = analogIn.value;
     
-    if(data.size() > 10){
-        int N = (ofGetElapsedTimef()-data[data.size()-1].sec)*1000;
-        
+    int N = 0;
+    
+    if ( data.size() == 0) {
+        pushNewData();
+    } else {
+        N = (ofGetElapsedTimef()-data[data.size()-1].sec)*1000;
+    }
+    
+    {
         if(Signal < thresh && N > (IBI/5)*3){       // avoid dichrotic noise by waiting 3/5 of last IBI
             if (Signal < T){                        // T is the trough
                 T = Signal;                         // keep track of lowest point in pulse wave
@@ -100,6 +108,8 @@ void ofxPulseSensor::update(){
                 runningTotal /= 10;                 // average the last 10 IBI values
                 BPM = 60000/runningTotal;           // how many beats can fit into a minute? that's BPM!
             }
+            
+            pushNewData();
         }
         
         if (Signal < thresh && Pulse){              // when the values are going down, the beat is over
@@ -119,8 +129,6 @@ void ofxPulseSensor::update(){
         }
         
     }
-    
-    pushNewData();
 #else
     
     //  GET THE DATA FROM ARDUINO
