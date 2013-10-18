@@ -28,12 +28,12 @@ bool AnalogIn::setup(int _channel){
 	int status  = -1;
     
 #ifdef TARGET_RASPBERRY_PI
+    cout << "Setting up WiringPi SPI channel " << channel << endl;
     status  = wiringPiSPISetup(channel, 1000000);
 #endif
     
 	if (status != -1){
 		ofLogVerbose() << "wiringPiSetup PASS";
-        ofLogError() << "wiringPiSetup PASS";
 		isReady = true;
 	} else {
 		ofLogError() << "wiringPiSetup FAIL status: " << status;
