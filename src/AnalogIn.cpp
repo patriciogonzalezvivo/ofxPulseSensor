@@ -33,6 +33,7 @@ bool AnalogIn::setup(int _channel){
     
 	if (status != -1){
 		ofLogVerbose() << "wiringPiSetup PASS";
+        ofLogError() << "wiringPiSetup PASS";
 		isReady = true;
 	} else {
 		ofLogError() << "wiringPiSetup FAIL status: " << status;
