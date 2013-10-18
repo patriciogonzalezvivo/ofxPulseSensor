@@ -36,32 +36,25 @@ public:
     void        update();
     void        draw();
 
-    int         Signal;
-    int         IBI;        // http://en.wikipedia.org/wiki/Heart_rate
-    int         BPM;        // http://en.wikipedia.org/wiki/Interbeat_interval
+    int         Signal;     //  Raw PulseSensor Signal
+    float       Value;      //  Normailzed PulseSensor Signal (-1 to 1)
+    int         IBI;        //  http://en.wikipedia.org/wiki/Interbeat_interval
+    int         BPM;        //  Normal between 60Ð100 bpm ( http://en.wikipedia.org/wiki/Heart_rate )
     
 private:
     void        pushNewData();
+    void        calculateBPM();
     void        cleanData();
     
 #ifdef TARGET_RASPBERRY_PI
     AnalogIn    analogIn;
-    
-    int         rate[10];
-    unsigned long sampleCounter;
-    unsigned long lastBeatTime;
-    int         thresh;
-    int         T;
-    int         P;
-    int         amp;
-    bool        firstBeat;
-    bool        secondBeat;
-    bool        Pulse;
-    bool        QS;
 #else
     ofSerial    serial;
 #endif
     
     vector<PulseData>   data;
     int         bufferSize;
+    
+    float       lastPulse;
+    vector<int> rate;
 };
