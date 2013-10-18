@@ -54,7 +54,7 @@ void ofxPulseSensor::update(){
     
     
     if(data.size() > 10){
-        int N = (ofGetElapsedTimef()-data[data.size()-1])*1000;
+        int N = (ofGetElapsedTimef()-data[data.size()-1].sec)*1000;
         
         if(Signal < thresh && N > (IBI/5)*3){       // avoid dichrotic noise by waiting 3/5 of last IBI
             if (Signal < T){                        // T is the trough
