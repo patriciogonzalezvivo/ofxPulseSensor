@@ -41,7 +41,7 @@ void ofxPulseSensor::setup(){
 #endif
     BPM = 0;
     IBI = 600;
-    bufferSize = 10;
+    bufferSize = 100;
 }
 
 void ofxPulseSensor::update(){
