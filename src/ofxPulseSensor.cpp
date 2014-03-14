@@ -7,7 +7,7 @@
 
 #include "ofxPulseSensor.h"
 
-void ofxPulseSensor::setup(){
+void ofxPulseSensor::setup(int _buffersize){
     
 #ifdef TARGET_RASPBERRY_PI
     
@@ -32,9 +32,33 @@ void ofxPulseSensor::setup(){
 #endif
     BPM = 0;
     IBI = 600;
-    bufferSize = 500;
+    bufferSize = _buffersize;
     
     lastPulse = 0;
+}
+
+void ofxPulseSensor::clearBuffer(){
+    data.clear();
+}
+
+void ofxPulseSensor::saveBuffer(string _csvFile){
+
+    ofBuffer buffer;
+    buffer.append("second,value,BPM,IBI\n");
+
+    for(int i = 0; i < data.size();i++){
+        string line;
+        line = ofToString(data[i].sec)+","+ofToString(data[i].val)+","+ofToString(data[i].BPM)+","+ofToString(data[i].IBI)+"\n";
+        buffer.append(line);
+    }
+    
+    if(ofBufferToFile(_csvFile, buffer)){
+        ofLogNotice("Data Saved!");
+        return true;
+    }else{
+        ofLogWarning("failed to save data!");
+        return false;
+    }
 }
 
 void ofxPulseSensor::update(){
@@ -86,6 +110,7 @@ void ofxPulseSensor::update(){
     cleanData();
     calculateBPM();
 }
+
 
 void ofxPulseSensor::pushNewData(){
     Value = ofMap(Signal, 212, 1024, 1.0, -1.0, true);

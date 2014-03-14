@@ -25,13 +25,16 @@ struct PulseData{
 class ofxPulseSensor{
 public:
     
-    void        setup();
+    void        setup(int _buffersize = 500); // number of entries to record (-1 == ALL)
     
     PulseData   getData(const float &_sec);
     float       getVal(const float &_sec);
     int         getBPM(const float &_sec);
     int         getIBI(const float &_sec);
     int         getSensor(const float &_sec);
+    
+    void        clearBuffer();
+    void        saveBuffer(string _csvFile);
     
     void        update();
     void        draw();

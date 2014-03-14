@@ -6,7 +6,7 @@ void ofApp::setup(){
     ofEnableAlphaBlending();
     ofEnableSmoothing();
     
-    pSensor.setup();
+    pSensor.setup(-1);
 }
 
 
@@ -26,7 +26,11 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+    if(key == ' '){
+        pSensor.clearBuffer();
+    } else if (key == 'r'){
+        pSensor.saveBuffer(ofGetTimestampString()+".csv");
+    }
 }
 
 //--------------------------------------------------------------
