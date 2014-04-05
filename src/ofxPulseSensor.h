@@ -34,7 +34,7 @@ public:
     int         getSensor(const float &_sec);
     
     void        clearBuffer();
-    void        saveBuffer(string _csvFile);
+    bool        saveBuffer(string _csvFile);
     
     void        update();
     void        draw();

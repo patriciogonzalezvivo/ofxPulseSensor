@@ -41,7 +41,7 @@ void ofxPulseSensor::clearBuffer(){
     data.clear();
 }
 
-void ofxPulseSensor::saveBuffer(string _csvFile){
+bool ofxPulseSensor::saveBuffer(string _csvFile){
 
     ofBuffer buffer;
     buffer.append("second,value,BPM,IBI\n");
