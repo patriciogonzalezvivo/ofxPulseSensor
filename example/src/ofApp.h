@@ -1,6 +1,8 @@
 #pragma once
 
 #include "ofMain.h"
+
+#include "AnalogIn.h"
 #include "ofxPulseSensor.h"
 
 class ofApp : public ofBaseApp{
@@ -20,4 +22,6 @@ public:
     void gotMessage(ofMessage msg);
     
     ofxPulseSensor  pSensor;
+    
+    AnalogIn        inPort;
 };
